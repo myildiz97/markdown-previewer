@@ -8,9 +8,36 @@ marked.setOptions({
 const renderer = new marked.Renderer()
 
 function App() {
-  const [markdown, setMarkdown] = React.useState(`# Heading 1\n ## Subheading 2\n This is a [link](https://example.com).\n Inline code: \`console.log('Hello, World!');\`\nCode block:\n \`\`\` function greeting() { console.log('Hello, World!'); } \`\`\`\n - List item 1\n - List item 2\n - List item 3\n > This is a blockquote.\n ![Nature Image](https://images.unsplash.com/photo-1684336177311-b34743d99c5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=702&q=80)\n**Bolded text**
+  const [markdown, setMarkdown] = React.useState(`
+  # H1
 
-`);
+  ## H2
+
+  [GitHub](https://github.com/myildiz97)
+
+  This is inline code: \`<div></div>\`
+
+  Here is code block:
+
+  \`\`\`
+  {
+    "firstName": "Mehmet",
+    "lastName": "Yıldız",
+    "age": 26
+  }
+  \`\`\`
+
+  - First item
+  - Second item
+  - Third item
+
+  > blockquote
+
+  ![Nature Image](image.jpg)
+
+  ***bold text**
+
+  `);
   return (
     <div className="app">
       <Editor markdown={markdown} setMarkdown={setMarkdown}/>
